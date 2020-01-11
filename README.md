@@ -1,4 +1,4 @@
-#CODING CHALLENGE
+# CODING CHALLENGE
 Please create a SPA using latest Angular for searching of open GitHub issues.
 
 Link for GitHub API: https://developer.github.com/v3/

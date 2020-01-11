@@ -8,6 +8,7 @@ import {IssuesModule} from './views/issues/issues.module';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MaterialModule,
     AppRoutingModule,
     SharedModule,
-    IssuesModule
+    IssuesModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

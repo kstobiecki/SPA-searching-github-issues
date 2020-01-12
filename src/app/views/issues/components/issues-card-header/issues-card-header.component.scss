@@ -1,0 +1,20 @@
+$card-header-theme: #F6F8FA;
+$card-border: #c7c7c7;
+
+.content {
+  height: 50px;
+  width: 100%;
+  background: $card-header-theme;
+  border-bottom: 1px solid $card-border;
+  display: flex;
+  align-items: center;
+
+  .header-icon {
+    margin: 0 7px 0 15px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}

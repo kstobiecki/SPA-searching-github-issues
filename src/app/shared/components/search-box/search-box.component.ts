@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, map, switchMap} from 'rxjs/operators';
+import {ApiService} from '../../services';
+import {IssueInterface} from '../../interfaces';
 
 @Component({
   selector: 'app-search-box',
@@ -10,8 +12,9 @@ import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
 export class SearchBoxComponent implements OnInit {
   private searchIssueControl: FormControl;
   private debounceTime = 1000;
+  private openIssuesQuery = 'is:open is:issue archived:false';
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.searchIssueControl = new FormControl('');
@@ -20,10 +23,14 @@ export class SearchBoxComponent implements OnInit {
         filter(val => val.length > 2),
         map(val => val.trim()),
         debounceTime(this.debounceTime),
-        distinctUntilChanged()
+        distinctUntilChanged(),
+        switchMap((q: string) => {
+          const query = `${this.openIssuesQuery} ${q}`;
+          return this.apiService.getOpenIssues(query);
+        })
       )
-      .subscribe(query => {
-        console.log(query);
+      .subscribe( (res: IssueInterface) => {
+        this.apiService.issues.next(res);
       });
   }
 }

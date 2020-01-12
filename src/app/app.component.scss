@@ -1,6 +1,7 @@
 $github-main: #24292E;
 $header-text-hover: #a8a8a8;
 $header-text: #FFFFFF;
+$content-background: #FFFFFF;
 
 .container {
   height: 100vh;
@@ -35,7 +36,7 @@ $header-text: #FFFFFF;
 .content {
   min-height: 500px;
   height: 100%;
-  background: white;
+  background: $content-background;
 }
 
 .footer {

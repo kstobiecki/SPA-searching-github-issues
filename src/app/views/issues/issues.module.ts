@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {IssuesComponents} from './components';
 import {IssuesServices} from './services';
+import {ApiService} from '../../shared/services';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {IssuesServices} from './services';
     ...IssuesComponents
   ],
   providers: [
-    ...IssuesServices
+    ...IssuesServices,
+    ApiService
   ]
 })
 export class IssuesModule { }

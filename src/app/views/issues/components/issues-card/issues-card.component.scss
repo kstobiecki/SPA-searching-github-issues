@@ -1,0 +1,15 @@
+$card-border: #c7c7c7;
+
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.issues-card {
+  // RWD not included
+  width: 970px;
+  height: 80%;
+  border: 1px solid $card-border;
+  border-radius: 4px;
+}

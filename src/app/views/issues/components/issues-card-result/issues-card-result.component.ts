@@ -19,7 +19,7 @@ export class IssuesCardResultComponent implements OnInit {
     }
   }
 
-  private toggleSave(issueId: string) {
+  public toggleSave(issueId: string) {
     this.status = !this.status;
     if (localStorage.getItem(issueId)) {
       localStorage.removeItem(issueId);

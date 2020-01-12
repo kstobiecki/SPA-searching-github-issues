@@ -1,3 +1,7 @@
+# HOST
+
+Link to Github Pages: https://kstobiecki.github.io/SPA-searching-github-issues/SPA-searching-github-issues
+
 # CODING CHALLENGE
 Please create a SPA using latest Angular for searching of open GitHub issues.
 

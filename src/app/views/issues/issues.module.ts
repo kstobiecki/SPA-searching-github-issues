@@ -2,13 +2,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {IssuesComponents} from './components';
 import {IssuesServices} from './services';
-import {ApiService} from '../../shared/services';
+import {SharedServices} from '../../shared/services';
 import {CommonModule} from '@angular/common';
+import {MaterialModule} from '../../material/material.module';
 
 @NgModule({
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   exports: [
     ...IssuesComponents
@@ -18,7 +20,7 @@ import {CommonModule} from '@angular/common';
   ],
   providers: [
     ...IssuesServices,
-    ApiService
+    ...SharedServices
   ]
 })
 export class IssuesModule { }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged, filter, map, switchMap} from 'rxjs/operators';
-import {ApiService} from '../../services';
+import {ApiService, SharedService} from '../../services';
 import {IssueInterface} from '../../interfaces';
 
 @Component({
@@ -14,7 +14,8 @@ export class SearchBoxComponent implements OnInit {
   private debounceTime = 1000;
   private openIssuesQuery = 'is:open is:issue archived:false';
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService,
+              private sharedService: SharedService) {}
 
   ngOnInit(): void {
     this.searchIssueControl = new FormControl('');
@@ -26,6 +27,7 @@ export class SearchBoxComponent implements OnInit {
         distinctUntilChanged(),
         switchMap((q: string) => {
           const query = `${this.openIssuesQuery} ${q}`;
+          this.sharedService.loadingData.next(true);
           return this.apiService.getOpenIssues(query);
         })
       )

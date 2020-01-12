@@ -1,4 +1,7 @@
 <div class="issues-card">
   <app-issues-card-header [issues]="issues"></app-issues-card-header>
-  <app-issues-card-not-found *ngIf="!foundIssues"></app-issues-card-not-found>
+  <app-issues-card-not-found *ngIf="showIssues"></app-issues-card-not-found>
+  <div class="spinner" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
 </div>

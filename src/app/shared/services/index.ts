@@ -1,9 +1,13 @@
 import {ApiService} from './api.service';
+import {SharedService} from './shared.service';
+
 
 export const SharedServices = [
-  ApiService
+  ApiService,
+  SharedService
 ];
 
 export {
-  ApiService
+  ApiService,
+  SharedService
 };

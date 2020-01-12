@@ -10,7 +10,8 @@ import {IssueInterface} from '../../interfaces';
   styleUrls: ['./search-box.component.scss'],
 })
 export class SearchBoxComponent implements OnInit {
-  private searchIssueControl: FormControl;
+  public searchIssueControl: FormControl;
+
   private debounceTime = 1000;
   private openIssuesQuery = 'is:open is:issue archived:false';
 

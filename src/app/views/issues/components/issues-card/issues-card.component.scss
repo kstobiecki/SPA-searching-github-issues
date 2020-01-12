@@ -12,4 +12,6 @@ $card-border: #c7c7c7;
   height: 80%;
   border: 1px solid $card-border;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }

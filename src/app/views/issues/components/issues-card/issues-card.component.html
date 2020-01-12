@@ -1,3 +1,4 @@
-<div class="issues-card" fxLayout="column">
-  <app-issues-card-header></app-issues-card-header>
+<div class="issues-card">
+  <app-issues-card-header [issues]="issues"></app-issues-card-header>
+  <app-issues-card-not-found *ngIf="!foundIssues"></app-issues-card-not-found>
 </div>

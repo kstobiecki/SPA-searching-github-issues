@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../../../../shared/services';
+import {Component, Input} from '@angular/core';
 import {IssueInterface} from '../../../../shared/interfaces';
 
 @Component({
@@ -7,14 +6,8 @@ import {IssueInterface} from '../../../../shared/interfaces';
   templateUrl: './issues-card-header.component.html',
   styleUrls: ['./issues-card-header.component.scss'],
 })
-export class IssuesCardHeaderComponent implements OnInit {
-  public totalValue = 0;
+export class IssuesCardHeaderComponent {
+  @Input() issues: IssueInterface;
 
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit(): void {
-    this.apiService.issues.subscribe((res: IssueInterface) => {
-      this.totalValue = res.total_count;
-    });
-  }
+  constructor() {}
 }

@@ -3,10 +3,12 @@ import {RouterModule} from '@angular/router';
 import {IssuesComponents} from './components';
 import {IssuesServices} from './services';
 import {ApiService} from '../../shared/services';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [
-    RouterModule
+    RouterModule,
+    CommonModule
   ],
   exports: [
     ...IssuesComponents

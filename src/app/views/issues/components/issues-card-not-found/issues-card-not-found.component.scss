@@ -1,0 +1,24 @@
+$not-found-color: #A3AAB1;
+
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    fill: $not-found-color;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}

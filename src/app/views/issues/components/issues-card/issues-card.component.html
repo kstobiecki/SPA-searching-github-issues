@@ -1,0 +1,10 @@
+<div class="issues-card">
+  <app-issues-card-header [issues]="issues"></app-issues-card-header>
+  <app-issues-card-not-found *ngIf="showNotFound"></app-issues-card-not-found>
+  <div class="spinner" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="content" *ngIf="!showNotFound && !loading && issues && issues.items.length">
+    <app-issues-card-result *ngFor="let issue of issues.items" [issue]="issue"></app-issues-card-result>
+  </div>
+</div>

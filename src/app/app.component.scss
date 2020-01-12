@@ -1,0 +1,45 @@
+$github-main: #24292E;
+$header-text-hover: #a8a8a8;
+$header-text: #FFFFFF;
+$content-background: #FFFFFF;
+
+.container {
+  height: 100vh;
+}
+
+.header {
+  min-height: 65px;
+  background: $github-main;
+
+  .header-item {
+    margin-right: 10px;
+
+    .logo svg{
+      margin-left: 20px;
+      fill: $header-text;
+    }
+
+    a {
+      color: $header-text;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+
+    a:hover {
+      color: $header-text-hover;
+    }
+  }
+}
+
+.content {
+  min-height: 500px;
+  height: 100%;
+  background: $content-background;
+}
+
+.footer {
+  min-height: 100px;
+  background: gray;
+}

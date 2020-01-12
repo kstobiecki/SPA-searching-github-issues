@@ -9,8 +9,8 @@ import {IssueItemInterface} from '../../../../shared/interfaces';
 export class IssuesCardResultComponent implements OnInit {
   @Input() issue: IssueItemInterface;
 
-  private creationDate: string;
-  private status = false;
+  public creationDate: string;
+  public status = false;
 
   ngOnInit(): void {
     this.creationDate = new Date(this.issue.created_at).toDateString();

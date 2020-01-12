@@ -1,0 +1,19 @@
+<div class="issue-content">
+  <div class="issue-info">
+    <div class="header-info">
+      <a href="{{issue.html_url}}" class="title">{{issue.title}}</a>
+    </div>
+    <div class="label-info" *ngIf="issue.labels.length">
+      <div class="label" *ngFor="let label of issue.labels" [style.backgroundColor]="'#' + label.color">{{label.name}}</div>
+    </div>
+    <div class="footer-info">
+      <span>#{{issue.number}}</span>
+      <span>opened on {{creationDate}}</span>
+      <span>by <a href="{{issue.user.html_url}}">{{issue.user.login}}</a></span>
+    </div>
+  </div>
+  <div class="issue-save">
+    <img src="{{issue.user.avatar_url}}">
+    <span class="fa fa-star save-button"></span>
+  </div>
+</div>

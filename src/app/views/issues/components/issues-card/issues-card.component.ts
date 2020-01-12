@@ -9,7 +9,7 @@ import {ApiService, SharedService} from '../../../../shared/services';
 })
 export class IssuesCardComponent implements OnInit {
   public issues: IssueInterface;
-  public showIssues = true;
+  public showNotFound = true;
   public loading = false;
 
   constructor(private apiService: ApiService,
@@ -17,7 +17,7 @@ export class IssuesCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.issues.subscribe((res: IssueInterface) => {
-      res.total_count ? this.showIssues = false : this.showIssues = true;
+      res.total_count ? this.showNotFound = false : this.showNotFound = true;
       this.issues = res;
       this.sharedService.loadingData.next(false);
     });
@@ -25,7 +25,7 @@ export class IssuesCardComponent implements OnInit {
     this.sharedService.loadingData.subscribe((loading: boolean) => {
       this.loading = loading;
       if (loading) {
-        this.showIssues = false;
+        this.showNotFound = false;
       }
     });
   }

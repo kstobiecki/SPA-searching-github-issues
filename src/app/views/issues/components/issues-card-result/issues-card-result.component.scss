@@ -1,0 +1,96 @@
+$footer-font-color: #707070;
+$header-font-color: #111111;
+$font-color-hover: #8a2be2;
+$border-color: #d4d4d4;
+$hover-color: #F6F8FA;
+$label-text-color: #FFF;
+$save-button-color: #b0b0b0;
+$save-button-color-hover: #808080;
+$save-button-color-clicked: #e6d132;
+
+.issue-content {
+  width: 100%;
+  min-height: 55px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-bottom: 1px solid $border-color;
+
+  .issue-info {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .header-info {
+      a {
+        margin-left: 15px;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+        color: $header-font-color;
+        &:hover {
+          color: $font-color-hover;
+        }
+      }
+    }
+
+    .label-info {
+      display: flex;
+      flex-direction: row;
+      margin-left: 15px;
+      .label {
+        font-size: 13px;
+        margin-right: 3px;
+        color: $label-text-color;
+        padding: 3px;
+        font-weight: 500;
+        border-radius: 2px;
+      }
+    }
+
+    .footer-info {
+      span:first-child {
+        margin-left: 15px;
+      }
+      span {
+        margin-right: 3px;
+        font-weight: 400;
+        font-size: 13px;
+        color: $footer-font-color;
+      }
+
+      a {
+        font-weight: 400;
+        font-size: 13px;
+        text-decoration: none;
+        color: $footer-font-color;
+        &:hover {
+          color: $font-color-hover;
+        }
+      }
+    }
+  }
+
+  .issue-save {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .save-button {
+      color: $save-button-color;
+      &:hover {
+        color: $save-button-color-hover;
+      }
+    }
+  }
+
+  &:hover {
+    background: $hover-color;
+  }
+}

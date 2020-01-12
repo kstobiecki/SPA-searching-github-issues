@@ -6,7 +6,8 @@ $hover-color: #F6F8FA;
 $label-text-color: #FFF;
 $save-button-color: #b0b0b0;
 $save-button-color-hover: #808080;
-$save-button-color-clicked: #e6d132;
+$save-button-color-checked: #e6d132;
+$save-button-color-checked-hover: #e8e517;
 
 .issue-content {
   width: 100%;
@@ -86,7 +87,14 @@ $save-button-color-clicked: #e6d132;
       color: $save-button-color;
       &:hover {
         color: $save-button-color-hover;
+        &.checked {
+          color: $save-button-color-checked;
+        }
       }
+    }
+
+    .checked {
+      color: $save-button-color-checked-hover;
     }
   }
 

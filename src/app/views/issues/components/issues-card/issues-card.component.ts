@@ -8,9 +8,9 @@ import {ApiService, SharedService} from '../../../../shared/services';
   styleUrls: ['./issues-card.component.scss'],
 })
 export class IssuesCardComponent implements OnInit {
-  public issues: IssueInterface;
-  public showNotFound = true;
-  public loading = false;
+  private issues: IssueInterface;
+  private showNotFound = true;
+  private loading = false;
 
   constructor(private apiService: ApiService,
               private sharedService: SharedService) {}

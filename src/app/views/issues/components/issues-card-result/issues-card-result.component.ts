@@ -8,9 +8,23 @@ import {IssueItemInterface} from '../../../../shared/interfaces';
 })
 export class IssuesCardResultComponent implements OnInit {
   @Input() issue: IssueItemInterface;
-  public creationDate: string;
+
+  private creationDate: string;
+  private status = false;
 
   ngOnInit(): void {
     this.creationDate = new Date(this.issue.created_at).toDateString();
+    if (localStorage.getItem(this.issue.id.toString())) {
+      this.status = true;
+    }
+  }
+
+  private toggleSave(issueId: string) {
+    this.status = !this.status;
+    if (localStorage.getItem(issueId)) {
+      localStorage.removeItem(issueId);
+    } else {
+      localStorage.setItem(issueId, 'save');
+    }
   }
 }

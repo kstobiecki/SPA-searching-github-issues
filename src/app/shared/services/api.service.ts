@@ -9,7 +9,7 @@ export class ApiService {
   public issues: Subject<IssueInterface> = new Subject();
   private issuesUrl = environment.api.issues;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {}
 
   public getOpenIssues(query: string): Observable<IssueInterface> {
     return this.httpClient.get<IssueInterface>(this.issuesUrl, {params: {q: query}});

@@ -5,7 +5,8 @@ import {IssuesCardComponent} from './views/issues/components';
 
 const routes: Routes = [
   { path: '', redirectTo: AppRouterUrls.DEFAULT, pathMatch: 'full' },
-  { path: AppRoutes.DEFAULT, component: IssuesCardComponent }
+  { path: AppRoutes.DEFAULT, component: IssuesCardComponent },
+  { path: '**', redirectTo: AppRouterUrls.DEFAULT }
 ];
 
 @NgModule({
